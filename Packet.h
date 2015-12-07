@@ -11,6 +11,9 @@
 
 class Packet {
 private:
+    const static int _dataSizeOffset = 10;
+    const static int _bytesLeft = 245;
+    const static int _headerSize = 11;
     const static int _s = 256;
     uint8_t buff[_s];
 

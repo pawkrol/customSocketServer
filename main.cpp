@@ -43,7 +43,7 @@ int main() {
             while (true) {
                 cout << "**Connection from " <<
                     sc->getReadableClientAddr() << ": ";
-                
+
                 sc->getResponse(packet);
                 cout << "\t\nPacket nr " << packet->getId();
                 cout << "\t\nSent at " << packet->getTime();
