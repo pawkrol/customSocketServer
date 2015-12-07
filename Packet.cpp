@@ -22,9 +22,9 @@ Packet::Packet(uint8_t *recv) {
 }
 
 void Packet::putData(std::string data) {
-    if (data.length() > 255){
+    if (data.length() > _bytesLeft){
         std::cerr << "too much data" << std::endl;
-        *(buff + _dataSizeOffset) = '\0';
+        *(buff + _dataSizeOffset) = 0;
     } else {
         this->data = data;
         size += data.length() + 1;
@@ -38,7 +38,7 @@ void Packet::putData(std::string data) {
 }
 
 void Packet::putData(uint8_t *data, size_t length) {
-    if (length > 255){
+    if (length > _bytesLeft){
         std::cerr << "too much data" << std::endl;
     } else {
         std::string _data((char*)data, length);

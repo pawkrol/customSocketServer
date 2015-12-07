@@ -18,7 +18,7 @@ private:
     uint8_t buff[_s];
 
     std::string data;
-    uint8_t size = 11; //packet size, 11 = header size
+    uint8_t size = _headerSize; //packet size
 
     static uint16_t id;
     uint16_t packetId;
